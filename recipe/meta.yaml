@@ -1,5 +1,5 @@
 {% set name = "johnnydep" %}
-{% set version = "1.8" %}
+{% set version = "1.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/wimglenn/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fece6ee1bc32ae17c5272d1165778f21bbcdff2b0987158fcc035f84b1a1e3da
+  sha256: 916f37cb216f1b3e12e373f3de12dd2698419c5a4d7871ecf84fbdfec13b943d
 
 build:
   noarch: python
