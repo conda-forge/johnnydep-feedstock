@@ -1,55 +1,58 @@
 {% set name = "johnnydep" %}
-{% set version = "1.10" %}
+{% set version = "1.13" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/wimglenn/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 600276b8281365fb58972e6c5895f46726d35f86130e7a17154708ba14301e84
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
+  sha256: 44ff958a425ea205c270d5bb28bf29139ccd6aff86daa1761b18ac71b48e8985
 
 build:
-  noarch: python
-  number: 0
   entry_points:
-    - johnnydep=johnnydep.cli:main
-    - pipper=johnnydep.pipper:main
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+    - johnnydep = johnnydep.cli:main
+    - pipper = johnnydep.pipper:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python >=2.7
     - pip
+    - python >=3.6
   run:
-    - python >=2.7
     - anytree
-    - structlog
-    - tabulate
-    - wimpy
-    - colorama
     - cachetools
+    - colorama
     - distlib
     - oyaml
-    - toml
-    - pip
     - packaging >=17
-    - wheel >=0.32.0
-    - setuptools >=38.3
+    - pip
     - pkginfo >=1.4.2
+    - python >=3.6
+    - setuptools >=38.3
+    - structlog
+    - tabulate
+    - toml
+    - wheel >=0.32.0
+    - wimpy
 
 test:
   imports:
     - johnnydep
   commands:
-    - johnnydep --version
+    - pip check
+    - johnnydep --help
+    - pipper --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/wimglenn/johnnydep
+  summary: Display dependency tree of Python distribution
   license: MIT
   license_file: LICENSE
-  summary: Display dependency tree of Python distribution
-  dev_url: https://github.com/wimglenn/johnnydep
 
 extra:
   recipe-maintainers:
