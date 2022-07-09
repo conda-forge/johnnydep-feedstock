@@ -9,8 +9,6 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/johnnydep-feeds
 
 Summary: Display dependency tree of Python distribution
 
-Development: https://github.com/wimglenn/johnnydep
-
 Current build status
 ====================
 
