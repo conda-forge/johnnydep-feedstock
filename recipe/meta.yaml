@@ -1,5 +1,5 @@
 {% set name = "johnnydep" %}
-{% set version = "1.15" %}
+{% set version = "1.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
-  sha256: 5ee4e716abea3a60e4b022be4f70d1e7991a2da6ed726ce307c22650a882d48a
+  sha256: 6f7297215c7b098cc7fa3db25c16dc85dce9f606d4fc9d78c1e7be155244ba4f
 
 build:
   entry_points:
