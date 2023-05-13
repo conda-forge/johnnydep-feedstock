@@ -1,5 +1,5 @@
 {% set name = "johnnydep" %}
-{% set version = "1.19.0" %}
+{% set version = "1.20.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
-  sha256: b4f4f9cd419f82d0db55c6a8ae9f245d4f2ab4c6c788c276fa3cd147497015cb
+  sha256: f95ea0fa52b0dc93e68bd39b27011010f7a865cdef092e8e9472bc391f349409
 
 build:
   entry_points:
@@ -22,6 +22,7 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - importlib-metadata
     - anytree
     - cachetools
     - colorama
