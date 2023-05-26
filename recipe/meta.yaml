@@ -1,5 +1,5 @@
 {% set name = "johnnydep" %}
-{% set version = "1.20.0" %}
+{% set version = "1.20.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
-  sha256: f95ea0fa52b0dc93e68bd39b27011010f7a865cdef092e8e9472bc391f349409
+  sha256: 5827dd477401f95a3d2a9eed1940891e62eb0557761c389c7fcabd7706315cae
 
 build:
   entry_points:
@@ -28,7 +28,7 @@ requirements:
     - colorama
     - distlib
     - oyaml
-    - packaging >=17
+    - packaging >=17,!=22
     - pip
     - pkginfo >=1.4.2
     - python >=3.6
