@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
   sha256: eacee79094c7820b089619a6b8ac2a1b62692db2e518eaeb03f8efa549bfaf04
 
 build:
@@ -15,12 +15,12 @@ build:
     - pipper = johnnydep.pipper:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - importlib-metadata
     - anytree
@@ -31,7 +31,7 @@ requirements:
     - packaging >=17,!=22
     - pip
     - pkginfo >=1.4.2
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools >=38.3
     - structlog
     - tabulate
@@ -48,6 +48,7 @@ test:
     - pipper --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/wimglenn/johnnydep
