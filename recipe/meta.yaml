@@ -1,13 +1,13 @@
 {% set name = "johnnydep" %}
-{% set version = "1.20.5" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
-  sha256: eacee79094c7820b089619a6b8ac2a1b62692db2e518eaeb03f8efa549bfaf04
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
+  sha256: 54f05293767aac2d5496f273299bb8d76529f737ba73a6123a65cb52846061ca
 
 build:
   entry_points:
@@ -22,6 +22,12 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - loguru
+    - pyyaml
+    - rich
+    - tomli-w
+    - unearth
+    - uv
     - importlib-metadata
     - anytree
     - cachetools
