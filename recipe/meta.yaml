@@ -1,13 +1,13 @@
 {% set name = "johnnydep" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
-  sha256: 54f05293767aac2d5496f273299bb8d76529f737ba73a6123a65cb52846061ca
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/johnnydep-{{ version }}.tar.gz
+  sha256: 64296fedfdb98afdcec72f9dd68779bb99fd88eb42935730db3ba6ace8442b99
 
 build:
   entry_points:
@@ -22,6 +22,7 @@ requirements:
     - setuptools
     - pip
   run:
+    - importlib-metadata
     - python >={{ python_min }}
     - loguru
     - packaging >=17,!=22
